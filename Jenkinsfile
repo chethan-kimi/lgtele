@@ -16,5 +16,14 @@ pipeline {
                 echo 'Package Application'
             }
         }
+        stage('Deploy for development'){
+            when{
+                branch 'development'
+            }
+            steps{
+                input message: 'Is test successful?'
+                echo 'Test is successful and proceeding for development'
+            }
+        }
     }
     }
