@@ -16,7 +16,7 @@ pipeline {
                 echo 'Package Application'
             }
         }
-        stage('Deploy for development'){
+        stage('Deploy for testing'){
             when{
                 branch 'development'
             }
