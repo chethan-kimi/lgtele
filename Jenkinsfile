@@ -6,6 +6,11 @@ pipeline {
                 git url: "https://github.com/chethan-kimi/lgtele.git"
             }
         }
+        stage('Verify Files') {
+            steps {
+                sh 'ls -la'
+            }
+        }
         stage('Build Application') {
             steps {
                 echo 'Build Application'
