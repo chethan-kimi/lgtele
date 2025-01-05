@@ -16,13 +16,13 @@ pipeline {
                 echo 'Package Application'
             }
         }
-        stage('Deploy for Testing'){
+        stage('Deploy for Production'){
             when{
                 branch 'testing'
             }
             steps{
                 input message: 'Is test successful?'
-                echo 'Test is successful and proceeding for testing'
+                echo 'Test is successful and proceeding for Production'
             }
         }
     }
