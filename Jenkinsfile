@@ -21,8 +21,8 @@ pipeline {
                 branch 'development'
             }
             steps{
-                input message: 'Is test successful?'
-                echo 'Test is successful and proceeding for development'
+                input message: 'Is development successful?'
+                echo 'development is successful and proceeding for testing'
             }
         }
     }
