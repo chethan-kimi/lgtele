@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url: "https://github.com/chethan-kimi/lgtele.git"
+                git url: "https://github.com/chethan-kimi/lgtele.git", branch: 'us-1234'
             }
         }
         stage('Verify Files') {
