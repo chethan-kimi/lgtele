@@ -42,7 +42,7 @@ pipeline {
                     spec: '''{
                         "files": [
                             {
-                        "pattern": "index.html",
+                        "pattern": "file1.txt",
                         "target": "development/"
                     },
                             {
