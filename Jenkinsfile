@@ -37,7 +37,7 @@ pipeline {
                     spec: '''{
                         "files": [
                             {
-                        "pattern": "file1.txt",
+                        "pattern": "index.html",
                         "target": "us-1234/"
                     },
                                                 {
@@ -45,7 +45,7 @@ pipeline {
                         "target": "us-1234/"
                     },
                             {
-                        "pattern": "Jenkinsfile",
+                        "pattern": "styles.css",
                         "target": "us-1234/"
                     }
                         ]
