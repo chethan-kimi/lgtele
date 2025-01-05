@@ -3,7 +3,12 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url: "https://github.com/chethan-kimi/lgtele.git"
+                git url: "https://github.com/chethan-kimi/lgtele.git", branch: 'testing'
+            }
+        }
+        stage('Verify Files') {
+            steps {
+                sh 'ls -la'
             }
         }
         stage('Build Application') {
@@ -25,5 +30,33 @@ pipeline {
                 echo 'Test is successful and proceeding for Production'
             }
         }
+        stage('Upload to JFrog Artifactory') {
+            steps {
+                rtServer (
+                    id: 'Artifactory-Server',
+                    url: 'https://trial116ruw.jfrog.io/artifactory/ts-lgtele/',
+                    credentialsId: 'Jfrog'
+                )
+                rtUpload (
+                    serverId: 'Artifactory-Server',
+                    spec: '''{
+                        "files": [
+                            {
+                        "pattern": "index.html",
+                        "target": "testing/"
+                    },
+                            {
+                        "pattern": "README.md",
+                        "target": "testing/"
+                    },
+                            {
+                        "pattern": "styles.css",
+                        "target": "testing/"
+                    }
+                        ]
+                    }'''
+                )
+    }
+    }
     }
     }
