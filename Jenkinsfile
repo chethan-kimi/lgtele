@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy for development'){
             when{
-                branch 'development'
+                branch 'us-1234'
             }
             steps{
                 input message: 'Is test successful?'
